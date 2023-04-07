@@ -52,10 +52,12 @@ func move():
 	
 	move_and_slide(velocity, Vector2.UP)
 		
-	if (is_on_floor()):
+	if is_on_floor():
 		velocity.y = 0
 		jumps_left = 2
 		can_dash = true
+	if is_on_ceiling():
+		velocity.y = 20
 
 func start_dash():
 	dashing = true
