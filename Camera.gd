@@ -18,13 +18,15 @@ var player: KinematicBody2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	player = get_parent().get_node("Player")
+	player = get_parent()
 	
 	target_offset = Vector2(player.position.x - 512, 0)
 	
 	offset = lerp(offset, target_offset, offset_lerp_weight)
 
 func _process(delta):
+	global_position = Vector2(512,300)
+	
 	if cam_mode == "free":
 		var dist = player.position.y #distance from top of screen
 		

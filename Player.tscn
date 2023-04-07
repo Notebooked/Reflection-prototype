@@ -1,9 +1,15 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://capsule.png" type="Texture" id=2]
+[ext_resource path="res://PlayerPlatform.gd" type="Script" id=3]
+[ext_resource path="res://Camera.gd" type="Script" id=4]
 
 [sub_resource type="CapsuleShape2D" id=1]
+
+[sub_resource type="SegmentShape2D" id=2]
+a = Vector2( -100, 0 )
+b = Vector2( 100, 0 )
 
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 1 )
@@ -19,3 +25,15 @@ texture = ExtResource( 2 )
 position = Vector2( 2.98023e-08, -5.96046e-08 )
 scale = Vector2( 0.0990099, 0.0987654 )
 texture = ExtResource( 2 )
+
+[node name="PlayerPlatform" type="StaticBody2D" parent="."]
+position = Vector2( 455, 300 )
+script = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerPlatform"]
+shape = SubResource( 2 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 512, 300 )
+current = true
+script = ExtResource( 4 )
