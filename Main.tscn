@@ -22,4 +22,4 @@ position = Vector2( 795, 243 )
 scale = Vector2( 6.86862, 1.11793 )
 
 [node name="BulletSpawner" parent="." instance=ExtResource( 6 )]
-position = Vector2( 141, 125 )
+position = Vector2( 543, 92 )
