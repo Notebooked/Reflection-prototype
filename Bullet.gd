@@ -3,6 +3,11 @@ extends KinematicBody2D
 var speed = 750
 var velocity = Vector2()
 
+func _ready():
+	$Timer.connect("timeout", self, "queue_free")
+	$Timer.set_wait_time(1)
+	$Timer.start()
+
 func start(pos, dir):
 	rotation = dir
 	position = pos
