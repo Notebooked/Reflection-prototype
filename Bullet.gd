@@ -14,6 +14,9 @@ func start(pos, dir):
 	velocity = Vector2(speed, 0).rotated(rotation)
 
 func _physics_process(delta):
+	if abs(position.x) > despawn_bounds or abs(position.y) > despawn_bounds:
+		queue_free() #KILL YOURSELF
+	
 	var collision = move_and_collide(velocity * delta)
 	if collision:
 		velocity = velocity.bounce(collision.normal)
