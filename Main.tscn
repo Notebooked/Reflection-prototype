@@ -43,8 +43,3 @@ position = Vector2( 392, -120 )
 scale = Vector2( 23.2686, 1.11793 )
 
 [node name="BulletSpawner" parent="." instance=ExtResource( 6 )]
-position = Vector2( 112, 16 )
-
-[node name="Breakable Ground" parent="." instance=ExtResource( 2 )]
-position = Vector2( 496, 72 )
-scale = Vector2( 1.2808, 4.66758 )
