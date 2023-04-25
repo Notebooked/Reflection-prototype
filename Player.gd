@@ -82,7 +82,11 @@ func dash(delta):
 			velocity = move * Vector2(0.65,1)
 		else:
 			velocity = move * Vector2(0.65,0.4)
-
+	for i in range(0, get_slide_count()):
+		var collision: KinematicCollision2D = get_slide_collision(i)
+		if "breakable" in collision.collider.get_groups():
+			collision.collider.destroy()
+		
 func switch_world():
 	in_mirror_world = !in_mirror_world
 
