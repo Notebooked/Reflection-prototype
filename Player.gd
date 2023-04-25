@@ -14,7 +14,7 @@ var velocity = Vector2.ZERO
 var dashing = false
 var can_dash = true
 var dash_time = 0.175
-var dash_speed = 1200
+var dash_speed = 1400
 var current_dash_time = 0.0
 var dash_vertical_mult = 0.75
 var dash_retain_velocity = Vector2.ZERO
@@ -24,7 +24,8 @@ var direction = Vector2.ZERO
 
 var mirrored: Sprite
 var mirror_level = 300
-var show_mirror = true
+var show_mirror = false
+var can_enter_mirror_world = false
 
 var in_mirror_world = false
 
@@ -60,7 +61,7 @@ func move():
 		velocity.y = 0
 		jumps_left = 2
 		can_dash = true
-	if is_on_ceiling():
+	if is_on_ceiling() and velocity.y < 0:
 		velocity.y = 20
 
 func start_dash():
@@ -82,13 +83,29 @@ func dash(delta):
 			velocity = move * Vector2(0.65,1)
 		else:
 			velocity = move * Vector2(0.65,0.4)
-	for i in range(0, get_slide_count()):
-		var collision: KinematicCollision2D = get_slide_collision(i)
-		if "breakable" in collision.collider.get_groups():
-			collision.collider.destroy()
+	if !in_mirror_world:
+		for i in range(0, get_slide_count()):
+			var collision: KinematicCollision2D = get_slide_collision(i)
+			if "breakable" in collision.collider.get_groups():
+				collision.collider.destroy()
 		
 func switch_world():
-	in_mirror_world = !in_mirror_world
+	if can_enter_mirror_world:
+		in_mirror_world = !in_mirror_world
+
+func enter_mirror_section(new_mirror_level):
+	can_enter_mirror_world = true
+	
+	mirror_level = new_mirror_level
+	show_mirror = true
+	$PlayerPlatform.enable_collisions()
+
+func exit_mirror_section():
+	in_mirror_world = false
+	can_enter_mirror_world = false
+	
+	show_mirror = false
+	$PlayerPlatform.disable_collisions()
 
 func process_input():
 	if Input.is_action_just_pressed("switch_world"):
@@ -117,5 +134,5 @@ func _physics_process(delta):
 	else:
 		move()
 	
-	mirrored.global_position.y = (mirror_level * 2) - position.y
+	mirrored.global_position.y = mirror_level * 2 - global_position.y
 	mirrored.visible = show_mirror
