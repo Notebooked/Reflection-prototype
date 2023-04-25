@@ -16,6 +16,6 @@ func _process(delta):
 		shoot()
 
 func shoot():
-	var b = Bullet.instance()
+	var b = Bullet.instantiate()
 	b.start($Muzzle.global_position, rotation)
 	get_parent().add_child(b)

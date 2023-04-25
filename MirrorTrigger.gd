@@ -1,7 +1,7 @@
 extends Area2D
 
-export var mirror_level: float
-export(NodePath) onready var platforms = get_node(platforms) as Node2D
+@export var mirror_level: float
+@export var platforms: Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

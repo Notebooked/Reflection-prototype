@@ -1,7 +1,6 @@
-extends KinematicBody2D
+extends CharacterBody2D
 
 var speed = 750
-var velocity = Vector2()
 
 var despawn_bounds
 
@@ -17,13 +16,13 @@ func _physics_process(delta):
 	
 	var collision = move_and_collide(velocity * delta)
 	if collision:
-		velocity = velocity.bounce(collision.normal)
+		velocity = velocity.bounce(collision.get_normal())
 		
-		if collision.collider.name == "Player":
+		if collision.get_collider().name == "Player":
 			queue_free()
 		
-		if collision.collider.has_method("hit"):
-			collision.collider.hit()
+		if collision.get_collider().has_method("hit"):
+			collision.get_collider().hit()
 
 func _on_VisibilityNotifier2D_screen_exited():
 	queue_free()

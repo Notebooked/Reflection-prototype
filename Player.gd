@@ -1,4 +1,4 @@
-extends KinematicBody2D
+extends CharacterBody2D
 
 var acceleration = 500
 var gravity = 20
@@ -8,8 +8,6 @@ var air_deceleration = 0.75
 
 var jump_power = 500
 var jumps_left = 2
-
-var velocity = Vector2.ZERO
 
 var dashing = false
 var can_dash = true
@@ -22,7 +20,7 @@ var dash_direction = Vector2.ZERO
 
 var direction = Vector2.ZERO
 
-var mirrored: Sprite
+var mirrored: Sprite2D
 var mirror_level = 300
 var show_mirror = false
 var can_enter_mirror_world = false
@@ -55,7 +53,9 @@ func move():
 		velocity.y = -jump_power
 		jumps_left -= 1
 	
-	move_and_slide(velocity, Vector2.UP)
+	set_velocity(velocity)
+	set_up_direction(Vector2.UP)
+	move_and_slide()
 		
 	if is_on_floor():
 		velocity.y = 0
@@ -78,16 +78,17 @@ func dash(delta):
 		var move = dash_direction
 		move.y *= dash_vertical_mult
 		move *= dash_speed
-		move_and_slide(move)
+		set_velocity(move)
+		move_and_slide()
 		if move.y > 0:
 			velocity = move * Vector2(0.65,1)
 		else:
 			velocity = move * Vector2(0.65,0.4)
 	if !in_mirror_world:
-		for i in range(0, get_slide_count()):
+		for i in range(0, get_slide_collision_count()):
 			var collision: KinematicCollision2D = get_slide_collision(i)
-			if "breakable" in collision.collider.get_groups():
-				collision.collider.destroy()
+			if "breakable" in collision.get_collider().get_groups():
+				collision.get_collider().destroy()
 		
 func switch_world():
 	if can_enter_mirror_world:

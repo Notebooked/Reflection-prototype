@@ -14,7 +14,7 @@ var zoom_lerp_weight = 0.2
 var target_offset = Vector2.ZERO
 var offset_lerp_weight = 0.125
 
-var player: KinematicBody2D
+var player: CharacterBody2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

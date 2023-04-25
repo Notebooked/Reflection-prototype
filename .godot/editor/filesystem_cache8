@@ -1,0 +1,25 @@
+2a60927148abd1d33b818b535e306557
+::res://::1682457270
+Breakable Ground.tscn::PackedScene::-1::1682454814::0::1::::<><>::res://cobblestone.webp<>res://BreakableGround.gd
+BreakableGround.gd::GDScript::-1::1682454814::0::1::::<>StaticBody2D<>::
+Bullet.gd::GDScript::-1::1682455108::0::1::::<>CharacterBody2D<>::
+Bullet.tscn::PackedScene::-1::1682454814::0::1::::<><>::res://Bullet.gd<>res://icon.png
+BulletSpawner.gd::GDScript::-1::1682455003::0::1::::<>StaticBody2D<>::
+BulletSpawner.tscn::PackedScene::-1::1682454814::0::1::::<><>::res://BulletSpawner.gd
+Camera.gd::GDScript::-1::1682454814::0::1::::<>Camera2D<>::
+capsule.png::CompressedTexture2D::2283363249883808224::1680815413::1682454826::1::::<><>::
+cobblestone.webp::CompressedTexture2D::4910152268088936189::1681759227::1682454826::1::::<><>::
+default_env.tres::Environment::5588111580626281534::1682455157::0::1::::<><>::
+icon.png::CompressedTexture2D::2393856454431332427::1680815053::1682454826::1::::<><>::
+Main.tscn::PackedScene::-1::1682454814::0::1::::<><>::res://Player.tscn<>res://Breakable Ground.tscn<>res://MirrorTrigger.tscn<>res://Platform.tscn<>res://Platforms.gd<>res://BulletSpawner.tscn
+Menu.gd::GDScript::-1::1682454814::0::1::::<>Control<>::
+Menu.tscn::PackedScene::170854802458466980::1682455157::0::1::::<><>::res://Menu.gd
+MirrorTrigger.gd::GDScript::-1::1682454814::0::1::::<>Area2D<>::
+MirrorTrigger.tscn::PackedScene::-1::1682454814::0::1::::<><>::res://MirrorTrigger.gd
+Platform.tscn::PackedScene::-1::1682454814::0::1::::<><>::res://square.png
+Platforms.gd::GDScript::-1::1682454814::0::1::::<>Node2D<>::
+Player.gd::GDScript::-1::1682454937::0::1::::<>CharacterBody2D<>::
+Player.tscn::PackedScene::-1::1682454814::0::1::::<><>::res://Player.gd<>res://capsule.png<>res://PlayerPlatform.gd<>res://Camera.gd
+PlayerPlatform.gd::GDScript::-1::1682454814::0::1::::<>StaticBody2D<>::
+README.md::TextFile::-1::1680815092::0::1::::<><>::
+square.png::CompressedTexture2D::1665786376586773190::1680884423::1682454826::1::::<><>::
