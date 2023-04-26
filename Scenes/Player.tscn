@@ -1,9 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://bh3qupvnvs2u1"]
+[gd_scene load_steps=7 format=3 uid="uid://dsh0x58d1nh5s"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1"]
 [ext_resource type="Texture2D" uid="uid://7scwn7erm15m" path="res://capsule.png" id="2"]
-[ext_resource type="Script" path="res://PlayerPlatform.gd" id="3"]
-[ext_resource type="Script" path="res://Camera.gd" id="4"]
+[ext_resource type="Script" path="res://Scripts/PlayerPlatform.gd" id="3_g8637"]
+[ext_resource type="Script" path="res://Scripts/Camera.gd" id="4_g7lqx"]
 
 [sub_resource type="CapsuleShape2D" id="1"]
 height = 40.0
@@ -23,17 +23,16 @@ scale = Vector2(0.0990099, 0.0987654)
 texture = ExtResource("2")
 
 [node name="Mirrored" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(2.98023e-08, -5.96046e-08)
 scale = Vector2(0.0990099, 0.0987654)
 texture = ExtResource("2")
 
 [node name="PlayerPlatform" type="StaticBody2D" parent="."]
-script = ExtResource("3")
+script = ExtResource("3_g8637")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerPlatform"]
 shape = SubResource("2")
 disabled = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
-script = ExtResource("4")
+script = ExtResource("4_g7lqx")

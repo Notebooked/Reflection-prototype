@@ -1,9 +1,7 @@
 res://default_env.tres
-res://Menu.tscn
-res://MirrorTrigger.tscn
-res://MirrorTrigger.gd
 res://Main.tscn
-res://Player.tscn
-res://PlayerPlatform.gd
-res://Breakable Ground.tscn
-res://Player.gd
+res://Scenes/MirrorTrigger.tscn
+res://Scenes/BreakableGround.tscn
+res://Scenes/BreakableGroundMirror.tscn
+res://Scenes/Player.tscn
+res://Scripts/Camera.gd

@@ -1,6 +1,6 @@
 extends StaticBody2D
 
-const Bullet = preload("res://Bullet.tscn")
+const Bullet = preload("res://Scenes/Bullet.tscn")
 var speed = 200
 var velocity = Vector2()
 

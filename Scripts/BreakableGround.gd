@@ -1,5 +1,6 @@
 extends StaticBody2D
 
+var mirror_prefab = "res://Scenes/BreakableGroundMirror.tscn"
 
 func destroy():
 	var platforms: Node2D = get_parent()
