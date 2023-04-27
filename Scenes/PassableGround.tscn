@@ -1,0 +1,54 @@
+[gd_scene load_steps=9 format=3 uid="uid://vf10yjuwmiwr"]
+
+[ext_resource type="Script" path="res://Scripts/PassableGround.gd" id="1_sbhq5"]
+[ext_resource type="Texture2D" uid="uid://e3v0rgryyx7l" path="res://mirrorblock.png" id="2_ufd1o"]
+
+[sub_resource type="RectangleShape2D" id="1"]
+
+[sub_resource type="Gradient" id="Gradient_duuwj"]
+colors = PackedColorArray(0.721859, 0.721859, 0.721859, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_v2jol"]
+gradient = SubResource("Gradient_duuwj")
+
+[sub_resource type="Gradient" id="Gradient_80lju"]
+offsets = PackedFloat32Array(0, 0.753695, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_j0ebo"]
+gradient = SubResource("Gradient_80lju")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_t1d1e"]
+emission_shape = 3
+emission_box_extents = Vector3(10, 10, 10)
+particle_flag_disable_z = true
+direction = Vector3(0, 1, 0)
+spread = 63.38
+gravity = Vector3(0, 30, 0)
+initial_velocity_min = -10.0
+initial_velocity_max = -10.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+color = Color(0.823529, 0.823529, 0.823529, 1)
+color_ramp = SubResource("GradientTexture1D_j0ebo")
+color_initial_ramp = SubResource("GradientTexture1D_v2jol")
+
+[node name="PassableGround" type="StaticBody2D"]
+script = ExtResource("1_sbhq5")
+
+[node name="Sprite" type="Sprite2D" parent="." groups=["breakable"]]
+position = Vector2(3.57628e-07, -7.15256e-07)
+scale = Vector2(0.0699301, 0.0699301)
+texture = ExtResource("2_ufd1o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("1")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+emitting = false
+amount = 100
+process_material = SubResource("ParticleProcessMaterial_t1d1e")
+lifetime = 3.5
+one_shot = true
+speed_scale = 2.0
+explosiveness = 1.0

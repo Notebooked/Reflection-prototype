@@ -35,4 +35,5 @@ shape = SubResource("2")
 disabled = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
+top_level = true
 script = ExtResource("4_g7lqx")

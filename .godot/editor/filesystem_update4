@@ -4,4 +4,6 @@ res://Scenes/MirrorTrigger.tscn
 res://Scenes/BreakableGround.tscn
 res://Scenes/BreakableGroundMirror.tscn
 res://Scenes/Player.tscn
-res://Scripts/Camera.gd
+res://Scenes/PassableGround.tscn
+res://Scripts/PassableGround.gd
+res://Player.gd

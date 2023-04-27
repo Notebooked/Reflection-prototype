@@ -74,6 +74,9 @@ func dash(delta):
 	current_dash_time += delta
 	if current_dash_time >= dash_time:
 		dashing = false
+		for node in get_tree().get_nodes_in_group("passable"):
+			node.enable_collision()
+		return
 	else:
 		var move = dash_direction
 		move.y *= dash_vertical_mult
@@ -84,11 +87,17 @@ func dash(delta):
 			velocity = move * Vector2(0.65,1)
 		else:
 			velocity = move * Vector2(0.65,0.4)
+			
 	if !in_mirror_world:
 		for i in range(0, get_slide_collision_count()):
 			var collision: KinematicCollision2D = get_slide_collision(i)
 			if "breakable" in collision.get_collider().get_groups():
 				collision.get_collider().destroy()
+		for node in get_tree().get_nodes_in_group("passable"):
+			node.enable_collision()
+	else:
+		for node in get_tree().get_nodes_in_group("passable"):
+			node.disable_collision()
 		
 func switch_world():
 	if can_enter_mirror_world:
