@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bmt0ltgtrf6gf"]
+[gd_scene load_steps=8 format=3 uid="uid://m227j7ndloh"]
 
 [ext_resource type="PackedScene" uid="uid://dsh0x58d1nh5s" path="res://Scenes/Player.tscn" id="1_76bkv"]
 [ext_resource type="PackedScene" uid="uid://bqtyj8tpjfao2" path="res://Scenes/BreakableGround.tscn" id="2"]

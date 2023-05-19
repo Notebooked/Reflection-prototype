@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=3 uid="uid://d1k14t8slux7k"]
+
+[ext_resource type="Script" path="res://Scripts/Selection.gd" id="1_qp221"]
+[ext_resource type="Texture2D" uid="uid://c5fay64gcva1o" path="res://Images/perspective2.png" id="2_o0qpf"]
+[ext_resource type="Texture2D" uid="uid://dbtndudsee6xv" path="res://Images/backarrow.png" id="3_6dupv"]
+
+[node name="LevelSelection" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qp221")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -73.0
+offset_right = 72.266
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_o0qpf")
+stretch_mode = 6
+
+[node name="Button" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 33.0
+offset_right = 124.0
+offset_bottom = 119.0
+texture_normal = ExtResource("3_6dupv")
+ignore_texture_size = true
+stretch_mode = 4
+
+[connection signal="pressed" from="Button" to="." method="_on_back_button_pressed"]
