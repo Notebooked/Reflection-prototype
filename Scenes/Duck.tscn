@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://f0mmgmcxocgl"]
+
+[ext_resource type="Script" path="res://Scripts/Duck.gd" id="1_1jkin"]
+[ext_resource type="Texture2D" uid="uid://7scwn7erm15m" path="res://capsule.png" id="1_epfn2"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wjmxe"]
+radius = 41.0
+height = 82.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pdppd"]
+size = Vector2(74, 67.75)
+
+[node name="Duck" type="Area2D"]
+script = ExtResource("1_1jkin")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0.999996, 1)
+scale = Vector2(0.294555, 0.145679)
+texture = ExtResource("1_epfn2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_wjmxe")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1, -1)
+shape = SubResource("RectangleShape2D_pdppd")
