@@ -1,9 +1,5 @@
 res://default_env.tres
 res://Main.tscn
-res://Scenes/MirrorTrigger.tscn
-res://Scenes/BreakableGround.tscn
-res://Scenes/BreakableGroundMirror.tscn
-res://Scenes/Player.tscn
-res://Scenes/PassableGround.tscn
-res://Scripts/PassableGround.gd
-res://Player.gd
+res://Scenes/Duck.tscn
+res://Scenes/Menu.tscn
+res://Scripts/Duck.gd

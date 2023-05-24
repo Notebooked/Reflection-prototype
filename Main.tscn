@@ -80,4 +80,4 @@ mirror_level = 237.0
 platforms = NodePath("../../Platforms")
 
 [node name="Duck" parent="." instance=ExtResource("8_c0y0y")]
-position = Vector2(63, 176)
+position = Vector2(-252, 314)
