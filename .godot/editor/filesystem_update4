@@ -1,5 +1,3 @@
 res://default_env.tres
 res://Main.tscn
 res://Scenes/Duck.tscn
-res://Scenes/Menu.tscn
-res://Scripts/Duck.gd
