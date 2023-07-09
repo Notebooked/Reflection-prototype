@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dsh0x58d1nh5s" path="res://Scenes/Player.tscn" id="1_76bkv"]
 [ext_resource type="PackedScene" uid="uid://bqtyj8tpjfao2" path="res://Scenes/BreakableGround.tscn" id="2"]
 [ext_resource type="Script" path="res://Scripts/Platforms.gd" id="2_gj6si"]
-[ext_resource type="PackedScene" path="res://Scenes/Platform.tscn" id="3_r8rtc"]
+[ext_resource type="PackedScene" uid="uid://x0r3yls5aqaj" path="res://Scenes/Platform.tscn" id="3_r8rtc"]
 [ext_resource type="PackedScene" path="res://Scenes/BulletSpawner.tscn" id="6"]
 [ext_resource type="PackedScene" uid="uid://ealytcutpg7e" path="res://Scenes/MirrorTrigger.tscn" id="6_rtqfi"]
 [ext_resource type="PackedScene" uid="uid://vf10yjuwmiwr" path="res://Scenes/PassableGround.tscn" id="7_mivq8"]
@@ -12,7 +12,7 @@
 [node name="Node2D" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_76bkv")]
-position = Vector2(-240, 224)
+position = Vector2(-280, 352)
 
 [node name="Platforms" type="Node2D" parent="."]
 script = ExtResource("2_gj6si")
@@ -59,25 +59,21 @@ scale = Vector2(0.969364, 4.56644)
 position = Vector2(64, -496)
 
 [node name="Platform" parent="." instance=ExtResource("3_r8rtc")]
-position = Vector2(-328, 384)
-scale = Vector2(38.6525, 2.68693)
+position = Vector2(-368, 592)
+scale = Vector2(38.653, 21.4)
 
 [node name="Platform3" parent="." instance=ExtResource("3_r8rtc")]
-position = Vector2(120, 264)
-scale = Vector2(11.4525, 2.68693)
-
-[node name="Platform2" parent="." instance=ExtResource("3_r8rtc")]
-position = Vector2(32, 320)
-scale = Vector2(2.65038, 7.80715)
+position = Vector2(80, 880)
+scale = Vector2(12.718, 64)
 
 [node name="MirrorTriggers" type="Node2D" parent="."]
-visible = false
 
 [node name="MirrorTrigger" parent="MirrorTriggers" node_paths=PackedStringArray("platforms") instance=ExtResource("6_rtqfi")]
-position = Vector2(825, -370)
-scale = Vector2(65.1674, 60.6904)
-mirror_level = 237.0
+position = Vector2(824, -360)
+scale = Vector2(64.426, 60)
+mirror_level = 240.0
 platforms = NodePath("../../Platforms")
 
 [node name="Duck" parent="." instance=ExtResource("8_c0y0y")]
+visible = false
 position = Vector2(-252, 314)
