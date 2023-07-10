@@ -7,4 +7,6 @@ func _process(delta):
 	var collision = $Area2D.get_overlapping_bodies()
 	for object in collision:
 		if object.name == "Player":
-			position.x += (object.position.x - position.x).normalized() * delta * speed
+			var temp = object.position - position
+			temp.y = 0
+			position.x += temp.normalized().x * delta * speed

@@ -70,7 +70,7 @@ scale = Vector2(12.718, 64)
 
 [node name="MirrorTrigger" parent="MirrorTriggers" node_paths=PackedStringArray("platforms") instance=ExtResource("6_rtqfi")]
 position = Vector2(824, -360)
-scale = Vector2(64.426, 60)
+scale = Vector2(62.026, 60)
 mirror_level = 240.0
 platforms = NodePath("../../Platforms")
 
