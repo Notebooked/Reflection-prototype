@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://dwx6sv22ycrpi"]
+
+[ext_resource type="Script" path="res://Scenes/Wolf.gd" id="1_3j562"]
+[ext_resource type="Texture2D" uid="uid://7scwn7erm15m" path="res://capsule.png" id="2_78jr4"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wjmxe"]
+radius = 41.0
+height = 82.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xt7a5"]
+size = Vector2(672, 112)
+
+[node name="Wolf" type="Area2D"]
+script = ExtResource("1_3j562")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_wjmxe")
+
+[node name="Capsule" type="Sprite2D" parent="."]
+position = Vector2(0.500003, -9.53674e-07)
+scale = Vector2(0.40099, 0.207407)
+texture = ExtResource("2_78jr4")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -16)
+shape = SubResource("RectangleShape2D_xt7a5")

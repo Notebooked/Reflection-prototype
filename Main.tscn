@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bmt0ltgtrf6gf"]
+[gd_scene load_steps=8 format=3 uid="uid://bmt0ltgtrf6gf"]
 
 [ext_resource type="PackedScene" uid="uid://dsh0x58d1nh5s" path="res://Scenes/Player.tscn" id="1_76bkv"]
 [ext_resource type="PackedScene" uid="uid://bqtyj8tpjfao2" path="res://Scenes/BreakableGround.tscn" id="2"]
@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" path="res://Scenes/BulletSpawner.tscn" id="6"]
 [ext_resource type="PackedScene" uid="uid://ealytcutpg7e" path="res://Scenes/MirrorTrigger.tscn" id="6_rtqfi"]
 [ext_resource type="PackedScene" uid="uid://vf10yjuwmiwr" path="res://Scenes/PassableGround.tscn" id="7_mivq8"]
-[ext_resource type="PackedScene" uid="uid://crgvfjbaafb62" path="res://Scenes/Pond.tscn" id="8_u7bhd"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -73,6 +72,3 @@ position = Vector2(824, -360)
 scale = Vector2(62.026, 60)
 mirror_level = 240.0
 platforms = NodePath("../../Platforms")
-
-[node name="Pond" parent="." instance=ExtResource("8_u7bhd")]
-position = Vector2(-408, 264)
