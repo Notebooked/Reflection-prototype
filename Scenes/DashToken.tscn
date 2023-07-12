@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://m7b2o7r5cchj"]
+
+[ext_resource type="Script" path="res://Scenes/Ability.gd" id="1_q1oy5"]
+[ext_resource type="Texture2D" uid="uid://badup306wit3h" path="res://icon.png" id="2_lro8l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qd3gb"]
+
+[node name="Dash" type="Area2D"]
+script = ExtResource("1_q1oy5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_qd3gb")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_lro8l")

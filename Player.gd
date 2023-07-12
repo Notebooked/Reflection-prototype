@@ -7,10 +7,10 @@ var floor_deceleration = 0.6
 var air_deceleration = 0.75
 
 var jump_power = 500
-var jumps_left = 2
+var jumps_left = 1
 
 var dashing = false
-var can_dash = true
+var can_dash = false
 var dash_time = 0.175
 var dash_speed = 1400
 var current_dash_time = 0.0
@@ -59,8 +59,9 @@ func move():
 		
 	if is_on_floor():
 		velocity.y = 0
-		jumps_left = 2
-		can_dash = true
+		if jumps_left < 2:
+			jumps_left = 1
+		#can_dash = true
 	if is_on_ceiling() and velocity.y < 0:
 		velocity.y = 20
 
