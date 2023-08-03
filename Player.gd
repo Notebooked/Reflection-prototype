@@ -7,7 +7,9 @@ var floor_deceleration = 0.6
 var air_deceleration = 0.75
 
 var jump_power = 500
-var jumps_left = 1
+var can_jump = true
+var coyote_time = 1
+var coyote_timer = 0
 
 var dashing = false
 var can_dash = false
@@ -30,8 +32,9 @@ var in_mirror_world = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	mirrored = $Mirrored
+	set_up_direction(Vector2.UP)
 
-func move():
+func move(delta):
 	velocity.y += gravity
 	
 	if is_on_floor():
@@ -48,22 +51,28 @@ func move():
 		velocity.x += acceleration
 		if velocity.x > max_velocity:
 			velocity.x = max_velocity
-			
-	if (Input.is_action_just_pressed("jump") and jumps_left > 0):
-		velocity.y = -jump_power
-		jumps_left -= 1
 	
-	set_velocity(velocity)
-	set_up_direction(Vector2.UP)
 	move_and_slide()
 		
-	if is_on_floor():
+	if (is_on_floor()) and velocity.y >= 0:
 		velocity.y = 0
-		if jumps_left < 2:
-			jumps_left = 1
-		#can_dash = true
+		can_jump = true
+	else:
+		can_jump = false
+		coyote_timer += delta
+		
 	if is_on_ceiling() and velocity.y < 0:
 		velocity.y = 20
+	
+	if (Input.is_action_just_pressed("jump") and (can_jump or coyote_timer <= coyote_time)):
+		velocity.y = -jump_power
+		can_jump = false
+	
+	if is_on_floor() and direction.x != 0:
+		$WalkingParticles.emitting = true
+		$WalkingParticles.direction.x = -direction.x
+	else:
+		$WalkingParticles.emitting = false
 
 func start_dash():
 	dashing = true
@@ -137,13 +146,14 @@ func process_input():
 	if direction != Vector2.ZERO and Input.is_action_just_pressed("dash") and can_dash and not dashing:
 		start_dash()
 
-func _physics_process(delta):
+func _process(delta):
 	process_input()
-	
+
+func _physics_process(delta):
 	if dashing:
 		dash(delta)
 	else:
-		move()
+		move(delta)
 	
 	mirrored.global_position.y = mirror_level * 2 - global_position.y
 	mirrored.visible = show_mirror

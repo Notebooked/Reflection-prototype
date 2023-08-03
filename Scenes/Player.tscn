@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dsh0x58d1nh5s"]
+[gd_scene load_steps=8 format=3 uid="uid://dsh0x58d1nh5s"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1"]
 [ext_resource type="Texture2D" uid="uid://7scwn7erm15m" path="res://capsule.png" id="2"]
@@ -11,6 +11,8 @@ height = 40.0
 [sub_resource type="SegmentShape2D" id="2"]
 a = Vector2(-100, 0)
 b = Vector2(100, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_p3ds4"]
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1")
@@ -36,4 +38,18 @@ disabled = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 top_level = true
+material = SubResource("ShaderMaterial_p3ds4")
 script = ExtResource("4_g7lqx")
+
+[node name="WalkingParticles" type="CPUParticles2D" parent="."]
+z_index = -1
+position = Vector2(0, 18)
+emitting = false
+direction = Vector2(1, -0.3)
+spread = 22.15
+gravity = Vector2(0, 0)
+initial_velocity_min = 78.31
+initial_velocity_max = 78.31
+scale_amount_min = 4.0
+scale_amount_max = 5.0
+color = Color(0.254902, 0.243137, 0.219608, 1)

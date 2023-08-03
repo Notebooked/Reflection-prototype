@@ -11,7 +11,7 @@
 [node name="Node2D" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_76bkv")]
-position = Vector2(-280, 352)
+position = Vector2(-320, 288)
 
 [node name="Platforms" type="Node2D" parent="."]
 script = ExtResource("2_gj6si")
@@ -58,7 +58,7 @@ scale = Vector2(0.969364, 4.56644)
 position = Vector2(64, -496)
 
 [node name="Platform" parent="." instance=ExtResource("3_r8rtc")]
-position = Vector2(-368, 592)
+position = Vector2(-408, 528)
 scale = Vector2(38.653, 21.4)
 
 [node name="Platform3" parent="." instance=ExtResource("3_r8rtc")]

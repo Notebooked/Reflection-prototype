@@ -1,2 +1,5 @@
+ColorRect
+CanvasLayer
+CPUParticles2D
 Node2D
 GPUParticles2D
