@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://bejw1cm3wcvpv"]
-
-[ext_resource type="AudioStream" uid="uid://b7gpwdh8iksay" path="res://BHGJ23.mp3" id="1_2b3ar"]
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
-stream = ExtResource("1_2b3ar")
-volume_db = -5.288
-autoplay = true

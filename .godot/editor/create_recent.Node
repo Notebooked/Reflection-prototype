@@ -1,3 +1,10 @@
+TextureRect
+HBoxContainer
+MarginContainer
+Control
+Panel
+Container
+PanelContainer
 ColorRect
 CanvasLayer
 CPUParticles2D

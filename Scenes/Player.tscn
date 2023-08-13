@@ -1,10 +1,9 @@
-[gd_scene load_steps=8 format=3]
+[gd_scene load_steps=8 format=3 uid="uid://dsh0x58d1nh5s"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1"]
 [ext_resource type="Texture2D" uid="uid://7scwn7erm15m" path="res://Images/capsule.png" id="2"]
 [ext_resource type="Script" path="res://Scripts/PlayerPlatform.gd" id="3_g8637"]
 [ext_resource type="Script" path="res://Scripts/Camera.gd" id="4_g7lqx"]
-
 
 [sub_resource type="CapsuleShape2D" id="1"]
 height = 40.0

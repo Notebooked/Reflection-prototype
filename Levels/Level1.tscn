@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://kd5wso5h7qjq"]
+
+[ext_resource type="PackedScene" uid="uid://dhvfkjv8pq7cd" path="res://Levels/TemplateLevel.tscn" id="1_6g6ut"]
+[ext_resource type="PackedScene" uid="uid://cyjmv4t4lnq52" path="res://Scenes/Platform.tscn" id="2_ftqv5"]
+
+[node name="Level" instance=ExtResource("1_6g6ut")]
+
+[node name="Platform" parent="." index="3" instance=ExtResource("2_ftqv5")]
+position = Vector2(20, 80)
+scale = Vector2(11.8713, 1.27879)

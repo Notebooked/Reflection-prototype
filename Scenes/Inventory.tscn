@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://b0vt2a310kkoi"]
+[gd_scene load_steps=3 format=3 uid="uid://dmv7jcr63vqwg"]
 
-[ext_resource type="Script" path="res://Scenes/Inventory.gd" id="1_gq5hd"]
 [ext_resource type="Texture2D" uid="uid://badup306wit3h" path="res://Images/icon.png" id="1_kw1ui"]
+[ext_resource type="Script" path="res://Scripts/Inventory.gd" id="1_xap01"]
 
 [node name="Inventory" type="Control"]
 layout_mode = 3
@@ -10,7 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_gq5hd")
+script = ExtResource("1_xap01")
 
 [node name="GridContainer" type="GridContainer" parent="."]
 layout_mode = 1

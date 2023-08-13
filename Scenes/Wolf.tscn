@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3]
+[gd_scene load_steps=5 format=3 uid="uid://drur53wjo04is"]
 
 [ext_resource type="Script" path="res://Scripts/Wolf.gd" id="1_3j562"]
 [ext_resource type="Texture2D" uid="uid://7scwn7erm15m" path="res://Images/capsule.png" id="2_78jr4"]

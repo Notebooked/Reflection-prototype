@@ -1,12 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://bmt0ltgtrf6gf"]
+[gd_scene load_steps=6 format=3 uid="uid://bmt0ltgtrf6gf"]
 
 [ext_resource type="PackedScene" uid="uid://dsh0x58d1nh5s" path="res://Scenes/Player.tscn" id="1_76bkv"]
-[ext_resource type="PackedScene" uid="uid://bqtyj8tpjfao2" path="res://Scenes/BreakableGround.tscn" id="2"]
 [ext_resource type="Script" path="res://Scripts/Platforms.gd" id="2_gj6si"]
-[ext_resource type="PackedScene" uid="uid://x0r3yls5aqaj" path="res://Scenes/Platform.tscn" id="3_r8rtc"]
-[ext_resource type="PackedScene" path="res://Scenes/BulletSpawner.tscn" id="6"]
+[ext_resource type="PackedScene" uid="uid://cyjmv4t4lnq52" path="res://Scenes/Platform.tscn" id="3_r8rtc"]
+[ext_resource type="PackedScene" uid="uid://c3mlrsd8aw7x0" path="res://Scenes/BulletSpawner.tscn" id="6"]
 [ext_resource type="PackedScene" uid="uid://ealytcutpg7e" path="res://Scenes/MirrorTrigger.tscn" id="6_rtqfi"]
-[ext_resource type="PackedScene" uid="uid://vf10yjuwmiwr" path="res://Scenes/PassableGround.tscn" id="7_mivq8"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -44,15 +42,7 @@ scale = Vector2(0.868615, 4.51793)
 position = Vector2(557, -152)
 scale = Vector2(23.2686, 1.11793)
 
-[node name="Breakable Ground" parent="Platforms" groups=["breakable"] instance=ExtResource("2")]
-position = Vector2(631, 121)
-scale = Vector2(1.33143, 5.92351)
-
 [node name="Duplicates" type="Node2D" parent="Platforms"]
-
-[node name="PassableGround" parent="Platforms" groups=["passable"] instance=ExtResource("7_mivq8")]
-position = Vector2(334, -208)
-scale = Vector2(0.969364, 4.56644)
 
 [node name="BulletSpawner" parent="." instance=ExtResource("6")]
 position = Vector2(64, -496)
