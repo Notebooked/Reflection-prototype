@@ -1,7 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://dwx6sv22ycrpi"]
+[gd_scene load_steps=5 format=3]
 
-[ext_resource type="Script" path="res://Scenes/Wolf.gd" id="1_3j562"]
-[ext_resource type="Texture2D" uid="uid://7scwn7erm15m" path="res://capsule.png" id="2_78jr4"]
+[ext_resource type="Script" path="res://Scripts/Wolf.gd" id="1_3j562"]
+[ext_resource type="Texture2D" uid="uid://7scwn7erm15m" path="res://Images/capsule.png" id="2_78jr4"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wjmxe"]
 radius = 41.0

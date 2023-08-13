@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://e3v0rgryyx7l"
-path="res://.godot/imported/mirrorblock.png-345aff807f20156e917de064dc23b1fc.ctex"
+uid="uid://7scwn7erm15m"
+path="res://.godot/imported/capsule.png-6d761b35f2836c11fe0ca695b543d8b8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://mirrorblock.png"
-dest_files=["res://.godot/imported/mirrorblock.png-345aff807f20156e917de064dc23b1fc.ctex"]
+source_file="res://Images/capsule.png"
+dest_files=["res://.godot/imported/capsule.png-6d761b35f2836c11fe0ca695b543d8b8.ctex"]
 
 [params]
 

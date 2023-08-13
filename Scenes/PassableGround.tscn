@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://vf10yjuwmiwr"]
+[gd_scene load_steps=9 format=3]
 
 [ext_resource type="Script" path="res://Scripts/PassableGround.gd" id="1_sbhq5"]
-[ext_resource type="Texture2D" uid="uid://e3v0rgryyx7l" path="res://mirrorblock.png" id="2_ufd1o"]
+[ext_resource type="Texture2D" uid="uid://e3v0rgryyx7l" path="res://Images/mirrorblock.png" id="2_ufd1o"]
+
 
 [sub_resource type="RectangleShape2D" id="1"]
 

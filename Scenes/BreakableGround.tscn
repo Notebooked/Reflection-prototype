@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://bqtyj8tpjfao2"]
+[gd_scene load_steps=9 format=3]
 
-[ext_resource type="Texture2D" uid="uid://cb7rqw8s824ir" path="res://cobblestone.webp" id="1"]
+[ext_resource type="Texture2D" uid="uid://cb7rqw8s824ir" path="res://Images/cobblestone.webp" id="1"]
 [ext_resource type="Script" path="res://Scripts/BreakableGround.gd" id="1_um5x3"]
+
 
 [sub_resource type="RectangleShape2D" id="1"]
 

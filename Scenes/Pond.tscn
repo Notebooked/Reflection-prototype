@@ -1,7 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://crgvfjbaafb62"]
+[gd_scene load_steps=4 format=3]
 
-[ext_resource type="PackedScene" uid="uid://f0mmgmcxocgl" path="res://Scenes/Duck.tscn" id="1_37moi"]
-[ext_resource type="Texture2D" uid="uid://e3v0rgryyx7l" path="res://mirrorblock.png" id="2_wlo5s"]
+[ext_resource type="PackedScene" path="res://Scenes/Duck.tscn" id="1_37moi"]
+[ext_resource type="Texture2D" uid="uid://e3v0rgryyx7l" path="res://Images/mirrorblock.png" id="2_wlo5s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wj3c2"]
 size = Vector2(676, 96)
