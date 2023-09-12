@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://kd5wso5h7qjq"]
+[gd_scene load_steps=5 format=3 uid="uid://kd5wso5h7qjq"]
 
 [ext_resource type="PackedScene" uid="uid://dhvfkjv8pq7cd" path="res://Levels/TemplateLevel.tscn" id="1_6g6ut"]
 [ext_resource type="PackedScene" uid="uid://cyjmv4t4lnq52" path="res://Scenes/Platform.tscn" id="2_ftqv5"]
 [ext_resource type="PackedScene" uid="uid://bl138webxhfb0" path="res://Scenes/Pond.tscn" id="3_hu2ew"]
+[ext_resource type="PackedScene" uid="uid://bvhgvs2q3n6f7" path="res://Items/TemplateItem.tscn" id="4_jk2t7"]
 
 [node name="Level" instance=ExtResource("1_6g6ut")]
 
@@ -12,3 +13,6 @@ scale = Vector2(61.6313, 1.27879)
 
 [node name="Pond" parent="." index="4" instance=ExtResource("3_hu2ew")]
 position = Vector2(548, 67)
+
+[node name="Item" parent="." index="5" instance=ExtResource("4_jk2t7")]
+position = Vector2(136, -41)

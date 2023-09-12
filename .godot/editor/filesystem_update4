@@ -4,4 +4,8 @@ res://Scripts/Player.gd
 res://Scenes/Duck.tscn
 res://Levels/Level1.tscn
 res://Scenes/Pond.tscn
+res://Scenes/Pond.gd
 res://Scripts/Duck.gd
+res://Items/TemplateItem.tscn
+res://Levels/TemplateLevel.tscn
+res://Scenes/PlayerGui.tscn

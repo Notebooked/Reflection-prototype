@@ -27,11 +27,13 @@ theme_override_constants/separation = 5
 layout_mode = 2
 size_flags_horizontal = 8
 texture = SubResource("PlaceholderTexture2D_cew6r")
+expand_mode = 3
 
 [node name="TextureRect2" type="TextureRect" parent="Inventory"]
 layout_mode = 2
 size_flags_horizontal = 8
 texture = SubResource("PlaceholderTexture2D_cew6r")
+expand_mode = 2
 
 [node name="Hearts" type="HBoxContainer" parent="."]
 layout_mode = 2
