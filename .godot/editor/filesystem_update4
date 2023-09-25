@@ -4,8 +4,14 @@ res://Scripts/Player.gd
 res://Scenes/Duck.tscn
 res://Levels/Level1.tscn
 res://Scenes/Pond.tscn
-res://Scenes/Pond.gd
-res://Scripts/Duck.gd
 res://Items/TemplateItem.tscn
 res://Levels/TemplateLevel.tscn
 res://Scenes/PlayerGui.tscn
+res://Scenes/Player.tscn
+res://Scripts/Ability.gd
+res://Scenes/JumpToken.tscn
+res://Scripts/JumpAbility.gd
+res://Scenes/JumpAbility.tscn
+res://Scripts/DashAbility.gd
+res://Scenes/DashAbility.tscn
+res://Scenes/BulletSpawner.tscn

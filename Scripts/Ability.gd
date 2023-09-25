@@ -1,15 +1,12 @@
 extends Area2D
 
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
+func ability_action(player):
+	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	var collision = get_overlapping_bodies()
-	for object in collision:
+	var collisions = get_overlapping_bodies()
+	for object in collisions:
 		if object.name == "Player":
-			object.jumps_left += 1
+			ability_action(object)
 			queue_free()

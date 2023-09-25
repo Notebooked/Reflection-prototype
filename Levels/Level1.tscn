@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://kd5wso5h7qjq"]
+[gd_scene load_steps=7 format=3 uid="uid://kd5wso5h7qjq"]
 
 [ext_resource type="PackedScene" uid="uid://dhvfkjv8pq7cd" path="res://Levels/TemplateLevel.tscn" id="1_6g6ut"]
 [ext_resource type="PackedScene" uid="uid://cyjmv4t4lnq52" path="res://Scenes/Platform.tscn" id="2_ftqv5"]
 [ext_resource type="PackedScene" uid="uid://bl138webxhfb0" path="res://Scenes/Pond.tscn" id="3_hu2ew"]
 [ext_resource type="PackedScene" uid="uid://bvhgvs2q3n6f7" path="res://Items/TemplateItem.tscn" id="4_jk2t7"]
+[ext_resource type="PackedScene" uid="uid://beupe6mrma2bb" path="res://Scenes/JumpAbility.tscn" id="5_6j08i"]
+[ext_resource type="PackedScene" uid="uid://bqn4urap7tp6p" path="res://Scenes/DashAbility.tscn" id="6_il02r"]
 
 [node name="Level" instance=ExtResource("1_6g6ut")]
 
@@ -16,3 +18,9 @@ position = Vector2(548, 67)
 
 [node name="Item" parent="." index="5" instance=ExtResource("4_jk2t7")]
 position = Vector2(136, -41)
+
+[node name="Jump" parent="." index="6" instance=ExtResource("5_6j08i")]
+position = Vector2(-167, -25)
+
+[node name="Dash" parent="." index="7" instance=ExtResource("6_il02r")]
+position = Vector2(-348, -45)

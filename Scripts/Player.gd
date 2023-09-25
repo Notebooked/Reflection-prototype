@@ -8,6 +8,7 @@ var air_deceleration = 0.75
 
 var jump_power = 500
 var can_jump = false
+var can_special_jump = false
 var coyote_time = 0.1
 var coyote_timer = 0
 
@@ -57,6 +58,7 @@ func move(delta):
 	if (is_on_floor()) and velocity.y >= 0:
 		velocity.y = 0
 		can_jump = true
+		can_special_jump = false
 		coyote_timer = 0
 	else:
 		can_jump = false
@@ -65,16 +67,25 @@ func move(delta):
 	if is_on_ceiling() and velocity.y < 0:
 		velocity.y = 20
 	
-	if (Input.is_action_just_pressed("jump") and (can_jump or coyote_timer < coyote_time)):
-		velocity.y = -jump_power
-		can_jump = false
-		coyote_timer = coyote_time
+	if Input.is_action_just_pressed("jump"):
+		if can_jump or coyote_timer < coyote_time:
+			velocity.y = -jump_power
+			can_jump = false
+			coyote_timer = coyote_time
+		elif can_special_jump == true:
+			velocity.y = -jump_power
+			can_special_jump = false
 	
 	if is_on_floor() and direction.x != 0:
 		$WalkingParticles.emitting = true
 		$WalkingParticles.direction.x = -direction.x
+		
+		$WalkingParticlesMirrored.emitting = true
+		$WalkingParticlesMirrored.direction.x = -direction.x
 	else:
 		$WalkingParticles.emitting = false
+		
+		$WalkingParticlesMirrored.emitting = false
 
 func start_dash():
 	dashing = true
