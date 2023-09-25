@@ -8,10 +8,10 @@ res://Items/TemplateItem.tscn
 res://Levels/TemplateLevel.tscn
 res://Scenes/PlayerGui.tscn
 res://Scenes/Player.tscn
-res://Scripts/Ability.gd
-res://Scenes/JumpToken.tscn
-res://Scripts/JumpAbility.gd
 res://Scenes/JumpAbility.tscn
-res://Scripts/DashAbility.gd
-res://Scenes/DashAbility.tscn
 res://Scenes/BulletSpawner.tscn
+res://Scenes/DashAbility.tscn
+res://Scenes/Door.tscn
+res://Scripts/Door.gd
+res://Scenes/Key.tscn
+res://Scripts/Key.gd

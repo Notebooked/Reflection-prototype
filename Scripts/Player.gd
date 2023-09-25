@@ -32,6 +32,8 @@ var in_mirror_world = false
 
 var checkpoint = null
 
+var has_key = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	mirrored = $Mirrored

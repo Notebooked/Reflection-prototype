@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://crg4grrux0nlf"]
+
+[ext_resource type="Script" path="res://Scripts/Door.gd" id="1_8bw1n"]
+[ext_resource type="Texture2D" uid="uid://dpxj27rqfarn8" path="res://Images/selector.png" id="2_7dgh1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bfe7i"]
+size = Vector2(128, 128)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jcq4s"]
+radius = 41.0
+height = 146.0
+
+[node name="Door" type="StaticBody2D"]
+script = ExtResource("1_8bw1n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.5, 0.05)
+shape = SubResource("RectangleShape2D_bfe7i")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.05)
+texture = ExtResource("2_7dgh1")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_jcq4s")
