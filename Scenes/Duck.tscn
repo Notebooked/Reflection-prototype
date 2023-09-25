@@ -19,3 +19,5 @@ shape = SubResource("CapsuleShape2D_wjmxe")
 position = Vector2(-2.84217e-14, -21)
 scale = Vector2(0.179775, 0.192015)
 texture = ExtResource("2_n86cs")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

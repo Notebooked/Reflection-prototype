@@ -30,6 +30,8 @@ var can_enter_mirror_world = false
 
 var in_mirror_world = false
 
+var checkpoint = null
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	mirrored = $Mirrored
@@ -139,6 +141,9 @@ func exit_mirror_section():
 	
 	show_mirror = false
 	$PlayerPlatform.disable_collisions()
+
+func die():
+	position = checkpoint
 
 func process_input():
 	if Input.is_action_just_pressed("switch_world"):

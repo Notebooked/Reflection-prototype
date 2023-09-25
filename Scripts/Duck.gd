@@ -73,3 +73,7 @@ func _process(delta):
 	moving_speed *= moving_decel
 	
 	correct_position()
+
+func _on_body_entered(body):
+	if body.name == "Player":
+		body.die()
