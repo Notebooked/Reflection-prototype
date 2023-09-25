@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://kd5wso5h7qjq"]
+[gd_scene load_steps=9 format=3 uid="uid://kd5wso5h7qjq"]
 
 [ext_resource type="PackedScene" uid="uid://dhvfkjv8pq7cd" path="res://Levels/TemplateLevel.tscn" id="1_6g6ut"]
 [ext_resource type="PackedScene" uid="uid://cyjmv4t4lnq52" path="res://Scenes/Platform.tscn" id="2_ftqv5"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://beupe6mrma2bb" path="res://Scenes/JumpAbility.tscn" id="5_6j08i"]
 [ext_resource type="PackedScene" uid="uid://bqn4urap7tp6p" path="res://Scenes/DashAbility.tscn" id="6_il02r"]
 [ext_resource type="PackedScene" uid="uid://ciq6j8sf2j3ag" path="res://Scenes/Checkpoint.tscn" id="7_ibvle"]
+[ext_resource type="PackedScene" uid="uid://dumnvcqnq5y3d" path="res://Scenes/Spike.tscn" id="8_in3bi"]
 
 [node name="Level" instance=ExtResource("1_6g6ut")]
 
@@ -28,3 +29,6 @@ position = Vector2(-348, -45)
 
 [node name="Checkpoint" parent="." index="8" instance=ExtResource("7_ibvle")]
 position = Vector2(180, -132)
+
+[node name="Spike" parent="." index="9" instance=ExtResource("8_in3bi")]
+position = Vector2(276, 56)

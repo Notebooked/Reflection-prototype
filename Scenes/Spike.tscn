@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://dumnvcqnq5y3d"]
+
+[ext_resource type="Script" path="res://Scenes/Spike.gd" id="1_2juc7"]
+[ext_resource type="Texture2D" uid="uid://e3v0rgryyx7l" path="res://Images/mirrorblock.png" id="2_f4mr2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1qqau"]
+
+[node name="Spike" type="Area2D"]
+script = ExtResource("1_2juc7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_1qqau")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.0699301, 0.07)
+texture = ExtResource("2_f4mr2")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
