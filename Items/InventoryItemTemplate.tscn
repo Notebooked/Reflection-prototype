@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://cku6jul05ubrn"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_2v025"]
+size = Vector2(60, 60)
+
+[node name="TextureRect" type="TextureRect"]
+size_flags_horizontal = 8
+texture = SubResource("PlaceholderTexture2D_2v025")
+expand_mode = 3

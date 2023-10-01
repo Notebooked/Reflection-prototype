@@ -1,5 +1,8 @@
-extends Control
+extends HBoxContainer
 
-func process(delta):
-	if Input.is_key_pressed("KEY_Q"):
-		
+@export var inventory_item_template: PackedScene;
+
+func create_inventory_item(texture):
+	var new_item = inventory_item_template.instantiate()
+	self.add_child(new_item)
+	new_item.texture = texture

@@ -1,7 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://c56nyhommt4ev"]
+[gd_scene load_steps=5 format=3 uid="uid://c56nyhommt4ev"]
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_cew6r"]
-size = Vector2(60, 60)
+[ext_resource type="Script" path="res://Scripts/Inventory.gd" id="1_i84tl"]
+[ext_resource type="PackedScene" uid="uid://cku6jul05ubrn" path="res://Items/InventoryItemTemplate.tscn" id="2_3wrf1"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_suol7"]
 size = Vector2(40, 40)
@@ -22,18 +22,8 @@ theme_override_constants/margin_bottom = 5
 layout_mode = 2
 size_flags_horizontal = 8
 theme_override_constants/separation = 5
-
-[node name="TextureRect" type="TextureRect" parent="Inventory"]
-layout_mode = 2
-size_flags_horizontal = 8
-texture = SubResource("PlaceholderTexture2D_cew6r")
-expand_mode = 3
-
-[node name="TextureRect2" type="TextureRect" parent="Inventory"]
-layout_mode = 2
-size_flags_horizontal = 8
-texture = SubResource("PlaceholderTexture2D_cew6r")
-expand_mode = 2
+script = ExtResource("1_i84tl")
+inventory_item_template = ExtResource("2_3wrf1")
 
 [node name="Hearts" type="HBoxContainer" parent="."]
 layout_mode = 2
