@@ -18,3 +18,7 @@ func remove_item(item_name):
 	items[item_name].queue_free()
 	
 	items.erase(item_name)
+
+func reset():
+	for item_name in items.keys():
+		remove_item(item_name)

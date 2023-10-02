@@ -30,6 +30,9 @@ var can_enter_mirror_world = false
 
 var in_mirror_world = false
 
+var death_timer = 0
+var death_threshold = 1
+var dying = false
 var checkpoint = null
 
 var gui = null;
@@ -154,8 +157,24 @@ func exit_mirror_section():
 	show_mirror = false
 	$PlayerPlatform.disable_collisions()
 
+func enable_player():
+	$CollisionShape2D.set_deferred("disabled", false)
+	visible = true
+
+func disable_player():
+	$CollisionShape2D.set_deferred("disabled", true)
+	visible = false
+
 func die():
-	position = checkpoint
+	if not dying:
+		death_timer = 0
+		dying = true
+		
+		inventory.reset()
+		
+		disable_player()
+		
+		position = checkpoint
 
 func process_input():
 	if Input.is_action_just_pressed("switch_world"):
@@ -184,11 +203,25 @@ func _process(delta):
 	
 	randomize_walking_particles()
 
-func _physics_process(delta):
-	if dashing:
-		dash(delta)
-	else:
-		move(delta)
+func process_dying(delta):
+	death_timer += delta
 	
-	mirrored.global_position.y = mirror_level * 2 - global_position.y
-	mirrored.visible = show_mirror
+	if dying:
+		if death_timer >= death_threshold:
+			%Respawnable.respawn()
+			
+			enable_player()
+			
+			dying = false
+
+func _physics_process(delta):
+	process_dying(delta)
+	
+	if not dying:
+		if dashing:
+			dash(delta)
+		else:
+			move(delta)
+		
+		mirrored.global_position.y = mirror_level * 2 - global_position.y
+		mirrored.visible = show_mirror
