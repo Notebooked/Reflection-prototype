@@ -94,15 +94,11 @@ func move(delta):
 			can_special_jump = false
 	
 	if is_on_floor() and direction.x != 0:
-		$WalkingParticles.emitting = true
-		$WalkingParticles.direction.x = -direction.x
+		$PlayerParticles.start_particles()
 		
-		$WalkingParticlesMirrored.emitting = true
-		$WalkingParticlesMirrored.direction.x = -direction.x
+		$PlayerParticles.set_x_direction(-direction.x)
 	else:
-		$WalkingParticles.emitting = false
-		
-		$WalkingParticlesMirrored.emitting = false
+		$PlayerParticles.stop_particles()
 
 func start_dash():
 	dashing = true
@@ -195,13 +191,8 @@ func process_input():
 	if direction != Vector2.ZERO and Input.is_action_just_pressed("dash") and can_dash and not dashing:
 		start_dash()
 
-func randomize_walking_particles():
-	$WalkingParticles.direction
-
 func _process(delta):
 	process_input()
-	
-	randomize_walking_particles()
 
 func process_dying(delta):
 	death_timer += delta

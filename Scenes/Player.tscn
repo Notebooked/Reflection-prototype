@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://dsh0x58d1nh5s"]
+[gd_scene load_steps=10 format=3 uid="uid://dsh0x58d1nh5s"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1"]
 [ext_resource type="Texture2D" uid="uid://7scwn7erm15m" path="res://Images/capsule.png" id="2"]
 [ext_resource type="Script" path="res://Scripts/PlayerPlatform.gd" id="3_g8637"]
 [ext_resource type="Script" path="res://Scripts/Camera.gd" id="4_g7lqx"]
 [ext_resource type="PackedScene" uid="uid://c56nyhommt4ev" path="res://Scenes/PlayerGui.tscn" id="5_wmojp"]
+[ext_resource type="Script" path="res://Scripts/PlayerParticles.gd" id="6_1ild7"]
 
 [sub_resource type="CapsuleShape2D" id="1"]
 height = 40.0
@@ -42,7 +43,15 @@ top_level = true
 material = SubResource("ShaderMaterial_p3ds4")
 script = ExtResource("4_g7lqx")
 
-[node name="WalkingParticles" type="CPUParticles2D" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="MarginContainer" parent="CanvasLayer" instance=ExtResource("5_wmojp")]
+metadata/_edit_use_anchors_ = true
+
+[node name="PlayerParticles" type="Node2D" parent="."]
+script = ExtResource("6_1ild7")
+
+[node name="WalkingParticles" type="CPUParticles2D" parent="PlayerParticles"]
 z_index = -1
 position = Vector2(0, 18)
 emitting = false
@@ -56,7 +65,7 @@ scale_amount_min = 4.0
 scale_amount_max = 5.0
 color = Color(0.254902, 0.243137, 0.219608, 1)
 
-[node name="WalkingParticlesMirrored" type="CPUParticles2D" parent="."]
+[node name="WalkingParticlesMirrored" type="CPUParticles2D" parent="PlayerParticles"]
 z_index = -1
 position = Vector2(0, 18)
 emitting = false
@@ -69,8 +78,3 @@ initial_velocity_max = 78.31
 scale_amount_min = 4.0
 scale_amount_max = 5.0
 color = Color(0.254902, 0.243137, 0.219608, 1)
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="MarginContainer" parent="CanvasLayer" instance=ExtResource("5_wmojp")]
-metadata/_edit_use_anchors_ = true
