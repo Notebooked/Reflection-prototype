@@ -5,5 +5,5 @@ func _process(delta):
 	var collision = get_overlapping_bodies()
 	for object in collision:
 		if object.name == "Player":
-			object.get_node("CanvasLayer/MarginContainer/Inventory").create_inventory_item($Sprite2D.texture);
+			object.get_node("CanvasLayer/MarginContainer/Inventory").create_inventory_item($Sprite2D.texture, name);
 			queue_free()

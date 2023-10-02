@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://kd5wso5h7qjq"]
+[gd_scene load_steps=9 format=3 uid="uid://kd5wso5h7qjq"]
 
 [ext_resource type="PackedScene" uid="uid://dhvfkjv8pq7cd" path="res://Levels/TemplateLevel.tscn" id="1_6g6ut"]
 [ext_resource type="PackedScene" uid="uid://cyjmv4t4lnq52" path="res://Scenes/Platform.tscn" id="2_ftqv5"]
@@ -8,8 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://bqn4urap7tp6p" path="res://Scenes/DashAbility.tscn" id="6_il02r"]
 [ext_resource type="PackedScene" uid="uid://ciq6j8sf2j3ag" path="res://Scenes/Checkpoint.tscn" id="7_ibvle"]
 [ext_resource type="PackedScene" uid="uid://dumnvcqnq5y3d" path="res://Scenes/Spike.tscn" id="8_in3bi"]
+[ext_resource type="PackedScene" uid="uid://b5ppdh6ck28qu" path="res://Scenes/Key.tscn" id="7_orled"]
 [ext_resource type="PackedScene" uid="uid://crg4grrux0nlf" path="res://Scenes/Door.tscn" id="8_rgetm"]
-[ext_resource type="PackedScene" uid="uid://bp6eg7rd3akv5" path="res://Items/KeyItem.tscn" id="10_7ip48"]
 
 [node name="Level" instance=ExtResource("1_6g6ut")]
 
@@ -29,14 +29,13 @@ position = Vector2(-167, -25)
 [node name="Dash" parent="." index="7" instance=ExtResource("6_il02r")]
 position = Vector2(-348, -45)
 
-[node name="Door" parent="." index="8" instance=ExtResource("8_rgetm")]
-position = Vector2(-215, -113)
-
-[node name="Checkpoint" parent="." index="9" instance=ExtResource("7_ibvle")]
+[node name="Checkpoint" parent="." index="8" instance=ExtResource("7_ibvle")]
 position = Vector2(180, -132)
 
-[node name="Spike" parent="." index="10" instance=ExtResource("8_in3bi")]
+[node name="Spike" parent="." index="9" instance=ExtResource("8_in3bi")]
 position = Vector2(276, 56)
+[node name="Key" parent="." index="8" instance=ExtResource("7_orled")]
+position = Vector2(-62, -60)
 
-[node name="Key" parent="." index="11" instance=ExtResource("10_7ip48")]
-position = Vector2(6, -62)
+[node name="Door" parent="." index="9" instance=ExtResource("8_rgetm")]
+position = Vector2(-215, -113)

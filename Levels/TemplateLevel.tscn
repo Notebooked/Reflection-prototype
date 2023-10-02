@@ -1,16 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://dhvfkjv8pq7cd"]
+[gd_scene load_steps=3 format=3 uid="uid://dhvfkjv8pq7cd"]
 
 [ext_resource type="PackedScene" uid="uid://dsh0x58d1nh5s" path="res://Scenes/Player.tscn" id="1_081di"]
 [ext_resource type="Script" path="res://Scripts/Platforms.gd" id="2_5hjnr"]
-[ext_resource type="PackedScene" uid="uid://c56nyhommt4ev" path="res://Scenes/PlayerGui.tscn" id="3_ratnv"]
 
 [node name="TemplateLevel" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_081di")]
-
-[node name="CanvasLayer" type="CanvasLayer" parent="Player"]
-
-[node name="MarginContainer" parent="Player/CanvasLayer" instance=ExtResource("3_ratnv")]
 
 [node name="Platforms" type="Node2D" parent="."]
 script = ExtResource("2_5hjnr")

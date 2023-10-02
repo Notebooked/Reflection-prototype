@@ -32,22 +32,12 @@ var in_mirror_world = false
 
 var checkpoint = null
 
-var gui = null;
-var inventory = null;
+var has_key = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	mirrored = $Mirrored
 	set_up_direction(Vector2.UP)
-	
-	gui = $CanvasLayer/MarginContainer
-	inventory = gui.get_node("Inventory")
-
-func has_key():
-	return inventory.has_item("Key")
-
-func key_used():
-	inventory.remove_item("Key")
 
 func move(delta):
 	velocity.y += gravity
@@ -176,13 +166,8 @@ func process_input():
 	if direction != Vector2.ZERO and Input.is_action_just_pressed("dash") and can_dash and not dashing:
 		start_dash()
 
-func randomize_walking_particles():
-	$WalkingParticles.direction
-
 func _process(delta):
 	process_input()
-	
-	randomize_walking_particles()
 
 func _physics_process(delta):
 	if dashing:

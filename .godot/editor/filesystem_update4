@@ -16,3 +16,5 @@ res://Items/TemplateItem.gd
 res://Scripts/Inventory.gd
 res://Scenes/Player.tscn
 res://Scenes/Inventory.tscn
+res://Levels/TemplateLevel.tscn
+res://Scripts/Door.gd

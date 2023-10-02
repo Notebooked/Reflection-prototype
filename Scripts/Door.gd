@@ -13,8 +13,9 @@ func _ready():
 func _process(delta):
 	for body in $Area2D.get_overlapping_bodies():
 		if body.name == "Player":
-			if body.has_key:
+			if body.has_key():
 				closing = true
+				body.key_used()
 	
 	if closing:
 		if $Sprite2D.scale.x <= 0:
