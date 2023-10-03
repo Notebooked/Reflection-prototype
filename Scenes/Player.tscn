@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dsh0x58d1nh5s"]
+[gd_scene load_steps=14 format=3 uid="uid://dsh0x58d1nh5s"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1"]
 [ext_resource type="Texture2D" uid="uid://7scwn7erm15m" path="res://Images/capsule.png" id="2"]
@@ -6,15 +6,23 @@
 [ext_resource type="Script" path="res://Scripts/Camera.gd" id="4_g7lqx"]
 [ext_resource type="PackedScene" uid="uid://c56nyhommt4ev" path="res://Scenes/PlayerGui.tscn" id="5_wmojp"]
 [ext_resource type="Script" path="res://Scripts/PlayerParticles.gd" id="6_1ild7"]
+[ext_resource type="Shader" path="res://Scenes/LevelScreen.gdshader" id="6_cnwsl"]
+[ext_resource type="Script" path="res://Scenes/testcamera.gd" id="8_bwg55"]
 
 [sub_resource type="CapsuleShape2D" id="1"]
 height = 40.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_p3ds4"]
 
 [sub_resource type="SegmentShape2D" id="2"]
 a = Vector2(-100, 0)
 b = Vector2(100, 0)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_p3ds4"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k480u"]
+shader = ExtResource("6_cnwsl")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_2gb5v"]
+viewport_path = NodePath("CanvasLayer/SubViewportContainer/SubViewport")
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1")
@@ -23,6 +31,7 @@ script = ExtResource("1")
 shape = SubResource("1")
 
 [node name="Capsule" type="Sprite2D" parent="."]
+visible = false
 scale = Vector2(0.0990099, 0.0987654)
 texture = ExtResource("2")
 
@@ -31,6 +40,11 @@ position = Vector2(2.98023e-08, -5.96046e-08)
 scale = Vector2(0.0990099, 0.0987654)
 texture = ExtResource("2")
 
+[node name="Camera2D" type="Camera2D" parent="."]
+top_level = true
+material = SubResource("ShaderMaterial_p3ds4")
+script = ExtResource("4_g7lqx")
+
 [node name="PlayerPlatform" type="StaticBody2D" parent="."]
 script = ExtResource("3_g8637")
 
@@ -38,17 +52,40 @@ script = ExtResource("3_g8637")
 shape = SubResource("2")
 disabled = true
 
-[node name="Camera2D" type="Camera2D" parent="."]
-top_level = true
-material = SubResource("ShaderMaterial_p3ds4")
-script = ExtResource("4_g7lqx")
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="MarginContainer" parent="CanvasLayer" instance=ExtResource("5_wmojp")]
 metadata/_edit_use_anchors_ = true
 
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_k480u")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("ViewportTexture_2gb5v")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="CanvasLayer"]
+offset_right = 512.0
+offset_bottom = 512.0
+
+[node name="SubViewport" type="SubViewport" parent="CanvasLayer/SubViewportContainer"]
+disable_3d = true
+transparent_bg = true
+handle_input_locally = false
+render_target_update_mode = 4
+
+[node name="Camera2D" type="Camera2D" parent="CanvasLayer/SubViewportContainer/SubViewport"]
+position = Vector2(50, 0)
+script = ExtResource("8_bwg55")
+
+[node name="Capsule2" type="Sprite2D" parent="CanvasLayer/SubViewportContainer/SubViewport"]
+scale = Vector2(0.0990099, 0.0987654)
+texture = ExtResource("2")
+
 [node name="PlayerParticles" type="Node2D" parent="."]
+visible = false
 script = ExtResource("6_1ild7")
 
 [node name="WalkingParticles" type="CPUParticles2D" parent="PlayerParticles"]
