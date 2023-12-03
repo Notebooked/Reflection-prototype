@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dsh0x58d1nh5s"]
+[gd_scene load_steps=13 format=3 uid="uid://dsh0x58d1nh5s"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1"]
 [ext_resource type="Texture2D" uid="uid://7scwn7erm15m" path="res://Images/capsule.png" id="2"]
@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://c56nyhommt4ev" path="res://Scenes/PlayerGui.tscn" id="5_wmojp"]
 [ext_resource type="Script" path="res://Scripts/PlayerParticles.gd" id="6_1ild7"]
 [ext_resource type="Shader" path="res://Scenes/LevelScreen.gdshader" id="6_cnwsl"]
-[ext_resource type="Script" path="res://Scenes/testcamera.gd" id="8_bwg55"]
 
 [sub_resource type="CapsuleShape2D" id="1"]
 height = 40.0
@@ -65,24 +64,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("ViewportTexture_2gb5v")
-
-[node name="SubViewportContainer" type="SubViewportContainer" parent="CanvasLayer"]
-offset_right = 512.0
-offset_bottom = 512.0
-
-[node name="SubViewport" type="SubViewport" parent="CanvasLayer/SubViewportContainer"]
-disable_3d = true
-transparent_bg = true
-handle_input_locally = false
-render_target_update_mode = 4
-
-[node name="Camera2D" type="Camera2D" parent="CanvasLayer/SubViewportContainer/SubViewport"]
-position = Vector2(50, 0)
-script = ExtResource("8_bwg55")
-
-[node name="Capsule2" type="Sprite2D" parent="CanvasLayer/SubViewportContainer/SubViewport"]
-scale = Vector2(0.0990099, 0.0987654)
-texture = ExtResource("2")
 
 [node name="PlayerParticles" type="Node2D" parent="."]
 visible = false
