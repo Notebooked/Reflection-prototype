@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dsh0x58d1nh5s"]
+[gd_scene load_steps=10 format=3 uid="uid://dsh0x58d1nh5s"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1"]
 [ext_resource type="Texture2D" uid="uid://7scwn7erm15m" path="res://Images/capsule.png" id="2"]
@@ -6,7 +6,6 @@
 [ext_resource type="Script" path="res://Scripts/Camera.gd" id="4_g7lqx"]
 [ext_resource type="PackedScene" uid="uid://c56nyhommt4ev" path="res://Scenes/PlayerGui.tscn" id="5_wmojp"]
 [ext_resource type="Script" path="res://Scripts/PlayerParticles.gd" id="6_1ild7"]
-[ext_resource type="Shader" path="res://Scenes/LevelScreen.gdshader" id="6_cnwsl"]
 
 [sub_resource type="CapsuleShape2D" id="1"]
 height = 40.0
@@ -16,12 +15,6 @@ height = 40.0
 [sub_resource type="SegmentShape2D" id="2"]
 a = Vector2(-100, 0)
 b = Vector2(100, 0)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_k480u"]
-shader = ExtResource("6_cnwsl")
-
-[sub_resource type="ViewportTexture" id="ViewportTexture_2gb5v"]
-viewport_path = NodePath("CanvasLayer/SubViewportContainer/SubViewport")
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1")
@@ -55,15 +48,6 @@ disabled = true
 
 [node name="MarginContainer" parent="CanvasLayer" instance=ExtResource("5_wmojp")]
 metadata/_edit_use_anchors_ = true
-
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
-material = SubResource("ShaderMaterial_k480u")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = SubResource("ViewportTexture_2gb5v")
 
 [node name="PlayerParticles" type="Node2D" parent="."]
 visible = false
