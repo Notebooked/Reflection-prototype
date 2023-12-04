@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://c56nyhommt4ev"]
+[gd_scene load_steps=6 format=3 uid="uid://c56nyhommt4ev"]
 
 [ext_resource type="Script" path="res://Scripts/Inventory.gd" id="1_i84tl"]
 [ext_resource type="PackedScene" uid="uid://cku6jul05ubrn" path="res://Items/InventoryItemTemplate.tscn" id="2_3wrf1"]
+[ext_resource type="Script" path="res://Scenes/Hearts.gd" id="3_aee3s"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_suol7"]
 size = Vector2(40, 40)
@@ -30,6 +31,7 @@ layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 theme_override_constants/separation = 5
+script = ExtResource("3_aee3s")
 
 [node name="TextureRect" type="TextureRect" parent="Hearts"]
 layout_mode = 2

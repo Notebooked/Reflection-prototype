@@ -37,6 +37,7 @@ var checkpoint = null
 
 var gui = null;
 var inventory = null;
+var hearts = null;
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -45,6 +46,7 @@ func _ready():
 	
 	gui = $CanvasLayer/MarginContainer
 	inventory = gui.get_node("Inventory")
+	hearts = gui.get_node("Hearts")
 
 func has_key():
 	return inventory.has_item("Key")
@@ -155,15 +157,36 @@ func disable_player():
 	visible = false
 
 func die():
-	if not dying:
-		death_timer = 0
-		dying = true
-		
-		inventory.reset()
-		
-		disable_player()
-		
-		position = checkpoint
+	if hearts.heartsnum > 1:
+		hearts.damage()
+	else:
+		if not dying:
+			death_timer = 0
+			dying = true
+			
+			inventory.reset()
+			
+			velocity = Vector2.ZERO
+			var dash_retain_velocity = Vector2.ZERO
+			var dash_direction = Vector2.ZERO
+			var direction = Vector2.ZERO
+			
+			coyote_timer = 0
+			current_dash_time = 0.0
+			death_timer = 0
+			
+			can_jump = false
+			can_special_jump = false
+			can_dash = false
+			can_enter_mirror_world = false
+			
+			in_mirror_world = false
+			dashing = false
+			show_mirror = false
+			
+			disable_player()
+			
+			position = checkpoint
 
 func process_input():
 	if Input.is_action_just_pressed("switch_world"):
