@@ -1,3 +1,14 @@
 res://default_env.tres
 res://Scenes/Player.tscn
 res://Scripts/Player.gd
+res://Main.tscn
+res://Scenes/Door.tscn
+res://Items/Key.tscn
+res://Levels/Level1.tscn
+res://Scenes/PlayerGui.tscn
+res://Scenes/Checkpoint.tscn
+res://Items/TemplateItem.tscn
+res://Items/KeyItem.tscn
+res://Items/InventoryItemTemplate.tscn
+res://Scenes/Inventory.tscn
+res://test.tscn
