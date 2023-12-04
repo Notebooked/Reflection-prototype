@@ -12,3 +12,4 @@ res://Items/KeyItem.tscn
 res://Items/InventoryItemTemplate.tscn
 res://Scenes/Inventory.tscn
 res://test.tscn
+res://Scripts/PlayerParticles.gd

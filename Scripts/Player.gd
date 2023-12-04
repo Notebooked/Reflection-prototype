@@ -92,13 +92,6 @@ func move(delta):
 		elif can_special_jump == true:
 			velocity.y = -jump_power
 			can_special_jump = false
-	
-	if is_on_floor() and direction.x != 0:
-		$PlayerParticles.start_particles()
-		
-		$PlayerParticles.set_x_direction(-direction.x)
-	else:
-		$PlayerParticles.stop_particles()
 
 func start_dash():
 	dashing = true

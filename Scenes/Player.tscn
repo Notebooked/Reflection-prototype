@@ -50,7 +50,6 @@ disabled = true
 metadata/_edit_use_anchors_ = true
 
 [node name="PlayerParticles" type="Node2D" parent="."]
-visible = false
 script = ExtResource("6_1ild7")
 
 [node name="WalkingParticles" type="CPUParticles2D" parent="PlayerParticles"]
